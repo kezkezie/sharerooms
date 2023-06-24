@@ -1,0 +1,63 @@
+[
+
+    {
+        "name": "Standard Double Room",
+        "maxaccount": 2,
+        "phonenumber": "+1-555-555-1234",
+        "rentperday": 100.00,
+        "userid": "64553e74ed3c4574350d9f7b",
+        "imageUrls": [
+            "https://www.shutterstock.com/image-illustration/white-room-sofa-urban-landscape-600w-530923672.jpg",
+            "https://www.shutterstock.com/image-illustration/interior-modern-bedroom-minimalism-3d-600w-2285956191.jpg",
+            "https://www.shutterstock.com/image-illustration/luxury-kitchen-interior-island-white-600w-2290461225.jpg"
+        ],
+        "currentBookings": [],
+        "type": "Double",
+        "description": "Our Standard Double Rooms are comfortable and stylish, featuring a double bed and a private bathroom with a shower."
+    },
+    {
+        "name": "Standard Twin Room",
+        "maxaccount": 2,
+        "phonenumber": "+1-555-555-2345",
+        "rentperday": 100.00,
+        "userid": "64554ee3db72c1068e2537f5",
+        "imageUrls": [
+            "https://www.shutterstock.com/image-illustration/mock-trendy-living-room-large-600w-1520284373.jpg",
+            "https://www.shutterstock.com/image-illustration/3d-rendering-modern-kitchen-blue-600w-1130784482.jpg",
+            "https://www.shutterstock.com/image-illustration/modern-bedroom-tropical-style-garden-600w-2033524331.jpg"
+        ],
+        "currentBookings": [],
+        "type": "Twin",
+        "description": "Our Standard Twin Rooms are perfect for friends or colleagues traveling together, featuring two single beds and a private bathroom with a shower."
+    },
+    {
+        "name": "Deluxe Double Room",
+        "maxaccount": 2,
+        "phonenumber": "+1-555-555-3456",
+        "rentperday": 120.00,
+        "userid": "6455549a9bcd21268fa9f258",
+        "imageUrls": [
+            "https://www.shutterstock.com/image-illustration/beautiful-interior-modern-room-bright-600w-2117925776.jpg",
+            "https://www.shutterstock.com/image-illustration/3d-illustration-modern-style-kitchen-600w-294865277.jpg",
+            "https://www.shutterstock.com/image-illustration/interior-bedroom-wall-mockup-3d-600w-1965395959.jpg"
+        ],
+        "currentBookings": [],
+        "type": "Double",
+        "description": "Our Deluxe Double Rooms offer a more spacious and luxurious living space, featuring a king-size bed and a private bathroom with a shower and a bathtub."
+    },
+    {
+        "name": "Family Room",
+        "maxaccount": 4,
+        "phonenumber": "+1-555-555-4567",
+        "rentperday": 150.00,
+        "userid": "64554ee3db72c1068e2537f5",
+        "imageUrls": [
+            "https://www.shutterstock.com/image-illustration/brown-living-room-sofa-scandinavian-600w-2054686700.jpg",
+            "https://www.shutterstock.com/image-illustration/light-cute-cozy-home-bedroom-600w-766041622.jpg",
+            "https://www.shutterstock.com/image-illustration/modern-contemporary-kitchen-room-interior-600w-1494694931.jpg"
+        ],
+        "currentBookings": [],
+        "type": "Double",
+        "description": "Our Deluxe Double Rooms offer a more spacious and luxurious living space, featuring a king-size bed and a private bathroom with a shower and a bathtub."
+    }
+]
