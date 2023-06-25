@@ -1,27 +1,27 @@
 const express = require("express");
-const http = require("http");
-const Server = require("socket.io").Server
+// const http = require("http");
+// const Server = require("socket.io").Server
 
 const app = express();
-const server = http.createServer(app)
-const io = new Server(server, {
-    cors:{
-        origin:"*"
-    }
-})
+// const server = http.createServer(app)
+// const io = new Server(server, {
+//     cors:{
+//         origin:"*"
+//     }
+// })
 
 
-io.on("connection", (socket) => {
-    console.log('we are connected')
+// io.on("connection", (socket) => {
+//     console.log('we are connected')
 
-    socket.on('chat', chat => {
-        io.emit('chat', chat)
-    })
+//     socket.on('chat', chat => {
+//         io.emit('chat', chat)
+//     })
 
-    socket.on('disconnect', () => {
-        console.log("not connected")
-    })
-})
+//     socket.on('disconnect', () => {
+//         console.log("not connected")
+//     })
+// })
 
 app.use(express.json());
 
@@ -143,4 +143,4 @@ const port = process.env.PORT || 5001;
 
 
 
-server.listen(port, () => console.log('node server started using nodemon'));
+app.listen(port, () => console.log('node server started using nodemon'));

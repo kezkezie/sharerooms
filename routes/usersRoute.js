@@ -46,21 +46,7 @@ router.post("/login", async (req, res) => {
     }
 });
 
-router.post("/authenticate", async (req, res) => {
-    const { username } = req.body;
-    // Get or create user on Chat Engine!
-    try {
-        const r = await axios.put(
-            "https://api.chatengine.io/users/",
-            { username: username, secret: username, first_name: username },
-            { headers: { "Private-Key": "aaf1f31b-daab-46db-b1b1-ce1425403e77" } }
-        );
-        return res.status(200).json(r.data);
-    } catch (error) {
-        console.log(`error is ${error}`)
-        return res.status(400).json({ error });
-    }
-});
+
 
 router.get("/getuser/:id", async (req, res) => {
 

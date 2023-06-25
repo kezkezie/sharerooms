@@ -1,0 +1,15 @@
+{
+    "name": "sharesocket",
+    "version": "1.0.0",
+    "description": "sharesocket",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon index.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "nodemon": "^2.0.22",
+        "socket.io": "^4.7.0"
+    }
+}
