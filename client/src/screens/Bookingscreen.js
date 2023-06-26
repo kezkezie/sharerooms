@@ -145,9 +145,9 @@ export default function Bookingscreen() {
 
 
                             <Link
-                                to={`/chatpage`}
+                                to={`/messanger`}
                                 state={{
-                                    user
+                                    userId: user._id
                                 }}
                                 className='btn 
                                 btn-primary' 

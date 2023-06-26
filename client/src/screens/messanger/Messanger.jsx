@@ -6,6 +6,7 @@ import Message from '../../components/message/Message'
 import ChatOnline from '../../components/chatOnline/ChatOnline'
 import './Messanger.css'
 import {io} from 'socket.io-client'
+import { useLocation } from 'react-router-dom';
 
 export default function Messanger() {
 
@@ -13,10 +14,11 @@ export default function Messanger() {
     const [currentChat, setcurrentChat] = useState(null);
     const [messages, setMessages] = useState([]);
     const [newMessage, setNewMessage] = useState("");
-    const [arrivalMessage, setArrivalMessage] = useState("");
+    const [arrivalMessage, setArrivalMessage] = useState(null);
     const [onlineUsers, setOnlineUsers] = useState([]);
     const socket = useRef();
     const scrollRef = useRef();
+    const location = useLocation();
 
 
     const user = JSON.parse(localStorage.getItem('currentUser')).data._id
@@ -33,6 +35,35 @@ export default function Messanger() {
         })
 
     }, []);
+
+
+    const createOwnerChat = async (id) => {
+        const resp = await axios.post('/conversations',{
+            senderId: user,
+            receiverId: id
+        })
+        if(resp.status === 409) {
+            setcurrentChat(null)
+            try {
+                const res = await axios.get("/conversations/" + user)
+                setConversations(res.data)
+                return;
+            } catch (error) {
+                console.log(error)
+
+            }
+        }
+
+        const res = await axios.get("/conversations/" + user)
+        setConversations(res.data)
+        setcurrentChat(resp.data)
+    }
+
+    useEffect(() => {
+        if(location.state !== null && location.state.userId ) {
+            createOwnerChat(location.state.userId)
+        }
+    },[location.state])
 
     useEffect(() => {
         arrivalMessage && 
@@ -93,7 +124,6 @@ export default function Messanger() {
         const receiverId = currentChat.members.find(
             (member) => member !== user
         );
-
         socket.current.emit("sendMessage", {
             senderId: user,
             receiverId,
@@ -153,7 +183,7 @@ export default function Messanger() {
                                             <div ref={scrollRef}>
 
 
-                                                <Message message={m} own={m.sender === user} />
+                                                <Message message={m} own={m.sender === user} user ={m.sender === user} />
                                             </div>
                                         )
 

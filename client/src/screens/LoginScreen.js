@@ -22,10 +22,9 @@ export default function LoginScreen() {
         try {
             setloading(true)
             const result = await axios.post('/api/user/login', user)
-            const chatresponse = await axios.post('/api/user/authenticate',{ username: user.email })
             setloading(false)
 
-            localStorage.setItem('currentUser', JSON.stringify({...result, ...chatresponse.data}));
+            localStorage.setItem('currentUser', JSON.stringify({...result}));
             navigate('/home') 
 
 

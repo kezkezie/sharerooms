@@ -75,6 +75,25 @@ app.get("/messages/:coversationId", async (req, res) => {
 
 
 app.post("/conversations", async (req, res)=>{
+    console.log(`senderId is ${req.body.senderId}`);
+    console.log(`recieverId is ${req.body.receiverId}`);
+    const conversation = await Conversation.find({
+        members: {$all:[req.body.senderId, req.body.receiverId]},
+    });
+
+    if(conversation.length > 0) {
+        console.log("Conversation already exists");
+        console.log(conversation);
+        //return res.sendStatus(501
+        res.status(409).json({
+            message: 'Already Exists'
+        })
+
+        return ;
+    }
+
+    console.log(conversation);
+   
     const newConversation = new Conversation({
         members: [req.body.senderId, req.body.receiverId]
     });
